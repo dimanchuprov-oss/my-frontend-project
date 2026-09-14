@@ -1,96 +1,80 @@
-/* 
-  Сброс стилей и определение блочной модели.
-  box-sizing: border-box включает padding и border в общую ширину/высоту элемента.
+/*
+Ограничиваем ширину содержимого шапки,
+чтобы оно не растягивалось слишком сильно на широких экранах.
 */
-* {
-  box-sizing: border-box;
-}
-
-/* 
-  Базовые стили для всей страницы
-*/
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #222222;
-  background-color: #ffffff;
-}
-
-/* 
-  Внутренние отступы для главных структурных блоков
-*/
-header,
-main,
-footer {
-  padding: 20px;
-}
-
-/* 
-  Фон для шапки и подвала
-*/
-header,
-footer {
-  background-color: #f2f2f2;
-}
-
-/* 
-  Стили шапки и навигации
-*/
-.site-header {
+.header {
   max-width: 1100px;
-  margin: 0 auto;
 }
 
-.site-logo {
+/*
+Оформляем текстовый логотип.
+*/
+.logo {
   font-weight: bold;
-  text-decoration: none;
   color: #222222;
 }
 
-.site-nav__list {
+/*
+Убираем стандартные отступы и маркеры списка навигации.
+*/
+.nav {
   padding: 0;
   margin: 16px 0 0;
-  list-style: none;
 }
 
-.site-nav__list li {
+/*
+Добавляем расстояние между пунктами меню.
+*/
+.nav li {
   margin-bottom: 8px;
 }
 
-.site-nav__list a {
-  color: #0057b8;
+/*
+Оформляем ссылки меню.
+*/
+.nav a {
+  color: #0056b3;
   text-decoration: none;
 }
 
-.site-nav__list a:hover {
+/*
+При наведении мыши подчёркиваем ссылку.
+Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
+*/
+.nav a:hover {
   text-decoration: underline;
 }
-
-/* 
-  Стили для основных секций и Hero-блока
+/*
+Блок — первый крупный блок страницы.
+Он визуально отделяется от остальных разделов фоном и отступами.
 */
-.hero {
+.promo {
   max-width: 1100px;
   margin: 0 auto 32px;
   padding: 32px 20px;
-  background-color: #eef5ff;
+  background-color: #eaf5ff;
   border-radius: 12px;
 }
 
+/*
+Общий класс для разделов страницы.
+*/
 .section {
   max-width: 1100px;
   margin: 0 auto 32px;
 }
 
+/*
+Убираем лишний верхний отступ у заголовков разделов.
+*/
 .section h2 {
   margin-top: 0;
 }
-
-/* 
-  Стили карточек товаров
+/*
+Карточка товара — самостоятельный блок.
+На следующих занятиях карточки будут доработаны и выстроены в сетку.
 */
-.product-card {
+.card {
   margin-bottom: 16px;
   padding: 16px;
   border: 1px solid #dddddd;
@@ -98,30 +82,9 @@ footer {
   background-color: #ffffff;
 }
 
-.product-card h3 {
-  margin-top: 0;
-}
-
-/* 
-  Кнопка и дополнительный блок aside
+/*
+Убираем лишний верхний отступ у заголовка карточки.
 */
-.button {
-  display: inline-block;
-  padding: 10px 16px;
-  color: #ffffff;
-  background-color: #0057b8;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.button:hover {
-  background-color: #003f86;
-}
-
-.aside-info {
-  max-width: 1100px;
-  margin: 0 auto 32px;
-  padding: 16px;
-  border-left: 4px solid #0057b8;
-  background-color: #f7f7f7;
+.card h3 {
+  margin-top: 0;
 }
