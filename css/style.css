@@ -1,80 +1,94 @@
-/*
-Ограничиваем ширину содержимого шапки,
-чтобы оно не растягивалось слишком сильно на широких экранах.
-*/
-.header {
+/* Базовый сброс и настройки */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+/* Шапка сайта */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 16px 20px;
+}
+
+.site-header {
   max-width: 1100px;
+  margin: 0 auto;
 }
 
-/*
-Оформляем текстовый логотип.
-*/
-.logo {
+.site-logo {
   font-weight: bold;
+  font-size: 20px;
   color: #222222;
+  text-decoration: none;
 }
 
-/*
-Убираем стандартные отступы и маркеры списка навигации.
-*/
-.nav {
+.site-nav__list {
   padding: 0;
   margin: 16px 0 0;
+  list-style: none;
 }
 
-/*
-Добавляем расстояние между пунктами меню.
-*/
-.nav li {
+.site-nav__list li {
   margin-bottom: 8px;
 }
 
-/*
-Оформляем ссылки меню.
-*/
-.nav a {
+.site-nav__list a {
   color: #0056b3;
   text-decoration: none;
 }
 
-/*
-При наведении мыши подчёркиваем ссылку.
-Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
-*/
-.nav a:hover {
+.site-nav__list a:hover {
   text-decoration: underline;
 }
-/*
-Блок — первый крупный блок страницы.
-Он визуально отделяется от остальных разделов фоном и отступами.
-*/
-.promo {
+
+/* Первый экран (Hero) */
+.hero {
   max-width: 1100px;
-  margin: 0 auto 32px;
+  margin: 20px auto 32px;
   padding: 32px 20px;
   background-color: #eaf5ff;
   border-radius: 12px;
 }
 
-/*
-Общий класс для разделов страницы.
-*/
+.hero h1 {
+  margin-top: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #003d82;
+}
+
+/* Общие секции */
 .section {
   max-width: 1100px;
   margin: 0 auto 32px;
+  padding: 0 20px;
 }
 
-/*
-Убираем лишний верхний отступ у заголовков разделов.
-*/
 .section h2 {
   margin-top: 0;
 }
-/*
-Карточка товара — самостоятельный блок.
-На следующих занятиях карточки будут доработаны и выстроены в сетку.
-*/
-.card {
+
+/* Карточка товара */
+.product-card {
   margin-bottom: 16px;
   padding: 16px;
   border: 1px solid #dddddd;
@@ -82,9 +96,30 @@
   background-color: #ffffff;
 }
 
-/*
-Убираем лишний верхний отступ у заголовка карточки.
-*/
-.card h3 {
+.product-card h3 {
   margin-top: 0;
+}
+
+/* Информационный блок */
+.aside-info {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+  padding: 20px;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+}
+
+.aside-info h2 {
+  margin-top: 0;
+}
+
+/* Подвал сайта */
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  border-top: 1px solid #e5e5e5;
+  color: #666666;
+  font-size: 14px;
 }
