@@ -1,1 +1,19 @@
-body { font-family: sans-serif; text-align: center; margin-top: 50px; background: #f0f4f8; } button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+header,
+main,
+footer {
+  padding: 20px;
+}
+
+header {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background-color: #f2f2f2;
+}
