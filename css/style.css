@@ -116,3 +116,26 @@ footer {
   color: #666666;
   font-size: 14px;
 }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.product-card { margin-bottom: 0; display: flex; flex-direction: column; }
+.product-card__price { font-weight: bold; }
+.product-card__button { margin-top: auto; align-self: flex-start; border: 0; cursor: pointer; font: inherit; }
+.button--secondary { background: #eef2f6; color: #333; }
+.button--secondary:hover { background: #dce3ea; }
+.order-dialog { width: min(560px, calc(100% - 32px)); border: 0; border-radius: 14px; padding: 28px; box-shadow: 0 20px 60px rgb(0 0 0 / 25%); }
+.order-dialog::backdrop { background: rgb(15 23 42 / 58%); }
+.dialog-close { position: absolute; top: 12px; right: 16px; border: 0; background: transparent; color: #555; font-size: 28px; cursor: pointer; }
+.order-dialog h2 { margin-top: 0; padding-right: 28px; }
+.order-form { display: grid; gap: 14px; }
+.form-field { display: grid; gap: 6px; }
+.form-field label, .checkbox-field { font-weight: 600; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; font: inherit; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: 3px solid rgb(0 86 179 / 18%); border-color: #0056b3; }
+.form-field small { color: #666; }
+.checkbox-field { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+.checkbox-field input { margin-top: 5px; }
+.form-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.form-actions .button { border: 0; cursor: pointer; font: inherit; }
+.form-error { color: #b42318; margin: 0; }
+.success-message { color: #147a3d; font-weight: 700; margin: 0; }
+@media (max-width: 700px) { .products-grid { grid-template-columns: 1fr; } .site-nav__list { display: grid; gap: 8px; } .order-dialog { padding: 22px; } }
