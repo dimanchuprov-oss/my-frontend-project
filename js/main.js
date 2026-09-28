@@ -36,9 +36,8 @@ if (dialog && form) {
 if (form) {
   // Принимаем только известные значения из ссылки на страницу заявки.
   const productId = new URLSearchParams(window.location.search).get('product');
-  if (!dialog && ['1', '2', '3'].includes(productId)) {
-    selectedProduct.value = `Товар ${productId}`;
-  }
+  const productsById = { '1': 'Неоны', '2': 'Золотая рыбка', '3': 'Гуппи' };
+  if (!dialog && productsById[productId]) selectedProduct.value = productsById[productId];
   form.addEventListener('reset', resetMessages);
   form.addEventListener('input', resetMessages);
   form.addEventListener('submit', (event) => {
