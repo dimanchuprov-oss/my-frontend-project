@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Изображения, описания, цены и таблицы характеристик трёх учебных товаров.">
+  <title>Описание товаров — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="./css/style.css">
+  
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span class="breadcrumbs__current" aria-current="page">Описание товаров</span></nav>
+    <section class="section">
+      <h1 class="section__title">Описание товаров</h1>
+      <article class="product-details" id="product-1">
+        <h2 class="product-details__title">Товар 1</h2>
+        <img class="product-details__image" src="images/product.svg" width="480" height="300" alt="Иллюстрация коробки учебного товара 1">
+        <p class="product-details__description">Учебный демонстрационный товар. Комплектация №1 для знакомства с оформлением заказа в магазине.</p>
+        <p class="product-card__price">Цена: 1000 руб.</p>
+        <table class="spec-table">
+          <caption class="spec-table__caption">Характеристики товара 1</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">DEMO-001</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Учебные товары</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Комплект</th><td class="spec-table__cell">1 шт.</td></tr>
+          </tbody>
+        </table>
+        <a class="button" href="order.html?product=1">Оставить заявку на товар 1</a>
+      </article>
+      <article class="product-details" id="product-2">
+        <h2 class="product-details__title">Товар 2</h2>
+        <img class="product-details__image" src="images/product.svg" width="480" height="300" alt="Иллюстрация коробки учебного товара 2">
+        <p class="product-details__description">Учебный демонстрационный товар. Комплектация №2 для знакомства с оформлением заказа в магазине.</p>
+        <p class="product-card__price">Цена: 1500 руб.</p>
+        <table class="spec-table">
+          <caption class="spec-table__caption">Характеристики товара 2</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">DEMO-002</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Учебные товары</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Комплект</th><td class="spec-table__cell">2 шт.</td></tr>
+          </tbody>
+        </table>
+        <a class="button" href="order.html?product=2">Оставить заявку на товар 2</a>
+      </article>
+      <article class="product-details" id="product-3">
+        <h2 class="product-details__title">Товар 3</h2>
+        <img class="product-details__image" src="images/product.svg" width="480" height="300" alt="Иллюстрация коробки учебного товара 3">
+        <p class="product-details__description">Учебный демонстрационный товар. Комплектация №3 для знакомства с оформлением заказа в магазине.</p>
+        <p class="product-card__price">Цена: 2000 руб.</p>
+        <table class="spec-table">
+          <caption class="spec-table__caption">Характеристики товара 3</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">DEMO-003</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Учебные товары</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Комплект</th><td class="spec-table__cell">3 шт.</td></tr>
+          </tbody>
+        </table>
+        <a class="button" href="order.html?product=3">Оставить заявку на товар 3</a>
+      </article>
+
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
+    <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
+    <a href="contacts.html">Контактная информация</a><p>&copy; 2026 Учебный проект. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+  <a class="back-to-top" href="#top">Наверх ↑</a>
+</body>
+</html>

@@ -7,18 +7,20 @@
   <title>Каталог товаров — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html" aria-current="page">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -26,61 +28,62 @@
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="index.html">Главная</a>
-      <span aria-current="page">Каталог товаров</span>
+      <span class="breadcrumbs__current" aria-current="page">Каталог товаров</span>
     </nav>
     <section class="section">
-      <h1>Каталог товаров</h1>
+      <h1 class="hero__title">Каталог товаров</h1>
       <p>Выберите товар. Заявку можно оформить в разделе <a href="index.html#popular">популярных товаров</a>.</p>
     </section>
     <div class="catalog-layout">
       <aside class="catalog-filters" aria-labelledby="filters-title">
-        <h2 id="filters-title">Фильтры</h2>
+        <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
         <p id="filters-note">Учебный макет: фильтрация пока не подключена.</p>
         <form class="filters-form" action="catalog.html" method="get" aria-describedby="filters-note">
-          <fieldset>
-            <legend>Категория</legend>
-            <label><input type="checkbox" name="category" value="all" checked> Все товары</label>
-            <label><input type="checkbox" name="category" value="popular"> Популярные</label>
-            <label><input type="checkbox" name="category" value="new"> Новинки</label>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Категория</legend>
+            <label class="filters-form__label"><input type="checkbox" name="category" value="all" checked> Все товары</label>
+            <label class="filters-form__label"><input type="checkbox" name="category" value="popular"> Популярные</label>
+            <label class="filters-form__label"><input type="checkbox" name="category" value="new"> Новинки</label>
           </fieldset>
-          <fieldset>
-            <legend>Цена, руб.</legend>
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена, руб.</legend>
+            <label class="filters-form__label" for="price-from">От</label>
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label class="filters-form__label" for="price-to">До</label>
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
-          <button class="button" type="submit" disabled>Применить</button>
+          <button class="button order-form__button" type="submit" disabled>Применить</button>
         </form>
       </aside>
       <section class="catalog-products" aria-labelledby="products-title">
-        <h2 id="products-title">Список товаров</h2>
-        <div class="products-grid">
-          <article class="product-card">
-            <h3>Товар 1</h3>
+        <h2 class="catalog-products__title" id="products-title">Список товаров</h2>
+        <div class="products-grid products-grid--catalog">
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge">Хит</span><h3 class="product-card__title">Товар 1</h3>
             <p>Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button" href="index.html#product-1">Подробнее</a>
+            <a class="button product-card__button" href="product.html#product-1">Подробнее</a>
           </article>
           <article class="product-card">
-            <h3>Товар 2</h3>
+            <h3 class="product-card__title">Товар 2</h3>
             <p>Краткое описание учебного товара с дополнительной информацией о комплектации.</p>
             <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button" href="index.html#product-2">Подробнее</a>
+            <a class="button product-card__button" href="product.html#product-2">Подробнее</a>
           </article>
           <article class="product-card">
-            <h3>Товар 3</h3>
+            <h3 class="product-card__title">Товар 3</h3>
             <p>Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button" href="index.html#product-3">Подробнее</a>
+            <a class="button product-card__button" href="product.html#product-3">Подробнее</a>
           </article>
         </div>
       </section>
     </div>
   </main>
-  <footer id="contacts">
-    <h2>Обратная связь</h2>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
     <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
     <a href="contacts.html">Контактная информация</a><p>&copy; 2026 Учебный проект. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+  <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">Наверх ↑</a>
 </body>
 </html>
