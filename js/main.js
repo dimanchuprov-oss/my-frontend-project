@@ -20,7 +20,12 @@ document.querySelectorAll('.product-card__button').forEach((button) => {
 
 document.querySelector('#close-order-dialog').addEventListener('click', () => dialog.close());
 document.querySelector('#cancel-order-dialog').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+dialog.addEventListener('click', (event) => {
+  const bounds = dialog.getBoundingClientRect();
+  const outside = event.clientX < bounds.left || event.clientX > bounds.right
+    || event.clientY < bounds.top || event.clientY > bounds.bottom;
+  if (event.target === dialog && outside) dialog.close();
+});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

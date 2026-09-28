@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог учебного интернет-магазина: список товаров и макет фильтров по категории и цене.">
+  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html" aria-current="page">Каталог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-current="page">Каталог товаров</span>
+    </nav>
+    <section class="section">
+      <h1>Каталог товаров</h1>
+      <p>Выберите товар. Заявку можно оформить в разделе <a href="index.html#popular">популярных товаров</a>.</p>
+    </section>
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-labelledby="filters-title">
+        <h2 id="filters-title">Фильтры</h2>
+        <p id="filters-note">Учебный макет: фильтрация пока не подключена.</p>
+        <form class="filters-form" action="catalog.html" method="get" aria-describedby="filters-note">
+          <fieldset>
+            <legend>Категория</legend>
+            <label><input type="checkbox" name="category" value="all" checked> Все товары</label>
+            <label><input type="checkbox" name="category" value="popular"> Популярные</label>
+            <label><input type="checkbox" name="category" value="new"> Новинки</label>
+          </fieldset>
+          <fieldset>
+            <legend>Цена, руб.</legend>
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          </fieldset>
+          <button class="button" type="submit" disabled>Применить</button>
+        </form>
+      </aside>
+      <section class="catalog-products" aria-labelledby="products-title">
+        <h2 id="products-title">Список товаров</h2>
+        <div class="products-grid">
+          <article class="product-card">
+            <h3>Товар 1</h3>
+            <p>Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 1000 руб.</p>
+            <a class="button" href="index.html#product-1">Подробнее</a>
+          </article>
+          <article class="product-card">
+            <h3>Товар 2</h3>
+            <p>Краткое описание учебного товара с дополнительной информацией о комплектации.</p>
+            <p class="product-card__price">Цена: 1500 руб.</p>
+            <a class="button" href="index.html#product-2">Подробнее</a>
+          </article>
+          <article class="product-card">
+            <h3>Товар 3</h3>
+            <p>Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 2000 руб.</p>
+            <a class="button" href="index.html#product-3">Подробнее</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="contacts">
+    <h2>Обратная связь</h2>
+    <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
+    <a href="contacts.html">Контактная информация</a><p>&copy; 2026 Учебный проект. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+</body>
+</html>
