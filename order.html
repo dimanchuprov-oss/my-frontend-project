@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Учебная форма заявки: выбор товара, контакты и удобная дата связи.">
+  <title>Оформление заявки — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span class="breadcrumbs__current" aria-current="page">Оформление заявки</span></nav>
+    <section class="section">
+      <h1 class="section__title">Оформление заявки</h1>
+<p>Демонстрационная форма: после проверки покажем сообщение, данные на сервер не отправляются.</p>
+<form class="order-form order-form--page" id="order-form" action="#" method="post" novalidate>
+      
+      <div class="order-form__field"><label class="order-form__label" for="selected-product">Товар</label><select class="order-form__select" id="selected-product" name="selected-product" required><option value="">Выберите товар</option><option>Товар 1</option><option>Товар 2</option><option>Товар 3</option></select></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-name">Имя</label><input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-email">E-mail</label><input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-phone">Телефон</label><input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$" required><small class="order-form__hint">Формат: +7 (900) 000-00-00</small></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-date">Дата связи</label><input class="order-form__input" id="order-date" name="date" type="date"></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-topic">Тема заявки</label><select class="order-form__select" id="order-topic" name="topic" required><option value="">Выберите тему</option><option value="Покупка товара">Покупка товара</option><option value="Консультация">Консультация</option><option value="Другой вопрос">Другой вопрос</option></select></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-comment">Комментарий</label><textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Ваш комментарий" minlength="5"></textarea></div>
+      <label class="order-form__consent" for="order-consent"><input class="order-form__checkbox" id="order-consent" name="consent" type="checkbox" required> Согласен на обработку персональных данных</label>
+      <p class="order-form__error" id="form-error" role="alert" hidden></p>
+      <div class="order-form__actions"><button class="button order-form__button" type="submit">Отправить заявку</button><button class="button button--secondary order-form__button" type="reset">Очистить</button></div>
+      <p class="order-form__success" id="success-message" role="status" hidden>Заявка проверена. Это учебная форма: данные не отправляются на сервер.</p>
+    </form>
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
+    <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
+    <a href="contacts.html">Контактная информация</a><p>&copy; 2026 Учебный проект. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+  <a class="back-to-top" href="#top">Наверх ↑</a>
+</body>
+</html>
