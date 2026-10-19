@@ -1,0 +1,39 @@
+name: Deploy KR2 to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - feature/css-architecture-states
+    paths:
+      - "kr2-bootstrap-shop/**"
+      - ".github/workflows/deploy-kr2-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload KR2 site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: kr2-bootstrap-shop
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
