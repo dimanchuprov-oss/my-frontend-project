@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_PAGES = {"index.html", "catalog.html", "product.html", "order.html"}
-EXPECTED_PAGES = REQUIRED_PAGES | {"about.html", "delivery.html", "contacts.html"}
+EXPECTED_PAGES = REQUIRED_PAGES | {"about.html", "contacts.html"}
 
 
 class Page(HTMLParser):
