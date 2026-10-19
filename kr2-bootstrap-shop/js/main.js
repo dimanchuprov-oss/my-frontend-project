@@ -194,7 +194,10 @@
       $('meta[name="description"]').content = `${p.name}: ${p.desc}`;
       const image = $('#detailImage');
       image.src = `images/${p.image}`; image.alt = p.name;
-      $('#detailImageNote').textContent = p.category === 'equipment' ? 'Авторская иллюстрация учебного товара.' : 'Фото вида. Окраска конкретной рыбки может отличаться.';
+      image.alt = p.category === 'equipment' ? `Пример оборудования: ${p.name}` : p.name;
+      $('#detailImageNote').textContent = p.category === 'equipment'
+        ? 'Фотография похожего оборудования для иллюстрации товара.'
+        : 'Фото вида. Окраска конкретной рыбки может отличаться.';
       const fields = { detailTitle: p.name, detailCategory: p.tag, detailBadge: p.badge, detailLatin: p.latin,
         detailDescription: p.desc, detailLongDescription: p.desc, detailPrice: money(p.price),
         detailOldPrice: money(p.old), detailUnit: `Цена за ${p.unit}`, detailStock: p.stock ? 'В наличии' : 'Ожидается поступление' };

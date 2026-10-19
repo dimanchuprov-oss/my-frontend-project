@@ -2,6 +2,7 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import urlsplit
 
 
@@ -90,6 +91,10 @@ def check() -> None:
         assert component in all_html, (component, "обязательный компонент не найден")
     assert "row" in all_html and "col-" in all_html, "не найдена сетка Bootstrap"
     assert ":focus-visible" in all_css, "не задано видимое состояние клавиатурного фокуса"
+    products = (ROOT / "js/products.js").read_text(encoding="utf-8")
+    for image in re.findall(r'"image":\s*"([^"]+)"', products):
+        assert (ROOT / "images" / image).is_file(), (image, "изображение товара не найдено")
+    assert (ROOT / "docs/photo-credits.md").is_file(), "нет атрибуции фотографий"
     assert (ROOT / "README.md").is_file(), "нет README.md"
     print("Локальные файлы, Bootstrap-сетка, компоненты и README: OK")
 
