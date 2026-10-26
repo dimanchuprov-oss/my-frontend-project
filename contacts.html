@@ -6,8 +6,11 @@
   <meta name="description" content="Контактная информация учебного интернет-магазина и переход к форме заявки.">
   <title>Контакты — FishHunter</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script src="./js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">FishHunter</a>
@@ -24,7 +27,7 @@
       </nav>
     </div>
   </header>
-  <main>
+  <main id="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="index.html">Главная</a>
       <span class="breadcrumbs__current" aria-current="page">Контакты</span>
@@ -42,8 +45,27 @@
     </section>
     <section class="section" id="feedback">
       <h2 class="section__title">Обратная связь</h2>
-      <p>Откройте страницу заявки, выберите товар и заполните контактные данные. Обязательные поля проверяются перед демонстрационной отправкой.</p>
-      <a class="button" href="order.html">Оставить заявку</a>
+      <p>Заполните форму, чтобы оставить вопрос. Данные проверяются в браузере и не отправляются на сервер.</p>
+      <form class="order-form order-form--page" id="feedback-form" action="#" method="post" novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-name">Имя</label>
+          <input class="order-form__input" id="feedback-name" name="name" type="text" autocomplete="name" minlength="2" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-email">E-mail</label>
+          <input class="order-form__input" id="feedback-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-message">Сообщение</label>
+          <textarea class="order-form__textarea" id="feedback-message" name="message" rows="4" minlength="5" required></textarea>
+        </div>
+        <p class="order-form__error" id="feedback-error" role="alert" hidden></p>
+        <div class="order-form__actions">
+          <button class="button order-form__button" type="submit">Отправить сообщение</button>
+          <button class="button button--secondary order-form__button" type="reset">Очистить</button>
+        </div>
+        <p class="order-form__success" id="feedback-success" role="status" hidden>Сообщение проверено. Это учебная форма: данные не отправляются на сервер.</p>
+      </form>
     </section>
   </main>
   <footer class="site-footer" id="contacts">

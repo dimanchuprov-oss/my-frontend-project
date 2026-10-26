@@ -6,9 +6,10 @@
   <meta name="description" content="Изображения, описания, цены и таблицы характеристик трёх учебных товаров.">
   <title>Описание рыб — FishHunter</title>
   <link rel="stylesheet" href="./css/style.css">
-  
+  <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">FishHunter</a>
@@ -25,16 +26,16 @@
       </nav>
     </div>
   </header>
-  <main>
+  <main id="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span class="breadcrumbs__current" aria-current="page">Описание товаров</span></nav>
     <section class="section">
       <h1 class="section__title">Описание товаров</h1>
       <article class="product-details" id="product-1">
         <h2 class="product-details__title">Неоны</h2>
-        <img class="product-details__image" src="images/neon-tetra.jpg" width="4214" height="2194" alt="Неон-тетра с яркой голубой и красной полосами" decoding="async">
+        <img class="product-details__image" src="images/responsive/neon-tetra-960.jpg" srcset="images/responsive/neon-tetra-480.jpg 480w, images/responsive/neon-tetra-960.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="4214" height="2194" alt="Неон-тетра с яркой голубой и красной полосами" decoding="async">
         <p class="product-details__description">Яркая стайная аквариумная рыбка с характерной голубой и красной полосами.</p>
         <p class="product-card__price">Цена: 1000 руб.</p>
-        <table class="spec-table">
+        <div class="table-wrapper" role="region" aria-label="Характеристики неонов" tabindex="0"><table class="spec-table">
             <caption class="spec-table__caption">Характеристики: неоны</caption>
           <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
           <tbody>
@@ -42,15 +43,15 @@
             <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные стайные рыбки</td></tr>
             <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Неон-тетра</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <a class="button" href="order.html?product=1">Заказать неонов</a>
       </article>
       <article class="product-details" id="product-2">
         <h2 class="product-details__title">Золотая рыбка</h2>
-        <img class="product-details__image" src="images/goldfish.jpg" width="960" height="640" alt="Золотая рыбка в аквариуме" decoding="async">
+        <img class="product-details__image" src="images/goldfish.jpg" srcset="images/responsive/goldfish-480.jpg 480w, images/goldfish.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="960" height="640" alt="Золотая рыбка в аквариуме" decoding="async">
         <p class="product-details__description">Золотая рыбка, популярный представитель семейства карповых.</p>
         <p class="product-card__price">Цена: 1500 руб.</p>
-        <table class="spec-table">
+        <div class="table-wrapper" role="region" aria-label="Характеристики золотой рыбки" tabindex="0"><table class="spec-table">
             <caption class="spec-table__caption">Характеристики: золотая рыбка</caption>
           <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
           <tbody>
@@ -58,15 +59,15 @@
             <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные рыбки</td></tr>
             <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Золотая рыбка</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <a class="button" href="order.html?product=2">Заказать золотую рыбку</a>
       </article>
       <article class="product-details" id="product-3">
         <h2 class="product-details__title">Гуппи</h2>
-        <img class="product-details__image" src="images/guppy.jpg" width="2816" height="1880" alt="Ярко окрашенный самец гуппи с пёстрым хвостом" decoding="async">
+        <img class="product-details__image" src="images/responsive/guppy-960.jpg" srcset="images/responsive/guppy-480.jpg 480w, images/responsive/guppy-960.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="2816" height="1880" alt="Ярко окрашенный самец гуппи с пёстрым хвостом" decoding="async">
         <p class="product-details__description">Небольшая живородящая рыбка, известная разнообразием окраски и формы хвоста.</p>
         <p class="product-card__price">Цена: 2000 руб.</p>
-        <table class="spec-table">
+        <div class="table-wrapper" role="region" aria-label="Характеристики гуппи" tabindex="0"><table class="spec-table">
             <caption class="spec-table__caption">Характеристики: гуппи</caption>
           <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
           <tbody>
@@ -74,7 +75,7 @@
             <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные живородящие рыбки</td></tr>
             <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Гуппи</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <a class="button" href="order.html?product=3">Заказать гуппи</a>
       </article>
 

@@ -5,6 +5,9 @@ const selectedProduct = document.querySelector('#selected-product');
 const productLabel = document.querySelector('#selected-product-label');
 const successMessage = document.querySelector('#success-message');
 const formError = document.querySelector('#form-error');
+const feedbackForm = document.querySelector('#feedback-form');
+const feedbackSuccess = document.querySelector('#feedback-success');
+const feedbackError = document.querySelector('#feedback-error');
 
 function resetMessages() {
   if (successMessage) successMessage.hidden = true;
@@ -25,6 +28,12 @@ if (dialog && form) {
   });
   document.querySelector('#close-order-dialog').addEventListener('click', () => dialog.close());
   document.querySelector('#cancel-order-dialog').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      dialog.close();
+    }
+  });
   dialog.addEventListener('click', (event) => {
     const bounds = dialog.getBoundingClientRect();
     const outside = event.clientX < bounds.left || event.clientX > bounds.right
@@ -53,5 +62,28 @@ if (form) {
     form.reset();
     selectedProduct.value = product;
     successMessage.hidden = false;
+  });
+}
+
+if (feedbackForm) {
+  const resetFeedbackMessages = () => {
+    feedbackSuccess.hidden = true;
+    feedbackError.hidden = true;
+    feedbackError.textContent = '';
+  };
+
+  feedbackForm.addEventListener('reset', resetFeedbackMessages);
+  feedbackForm.addEventListener('input', resetFeedbackMessages);
+  feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    resetFeedbackMessages();
+    if (!feedbackForm.checkValidity()) {
+      feedbackError.textContent = 'Проверьте имя, адрес электронной почты и сообщение.';
+      feedbackError.hidden = false;
+      feedbackForm.reportValidity();
+      return;
+    }
+    feedbackForm.reset();
+    feedbackSuccess.hidden = false;
   });
 }

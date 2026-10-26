@@ -6,9 +6,11 @@
   <meta name="description" content="FishHunter: неоны, золотые рыбки и гуппи для домашнего аквариума.">
   <title>FishHunter — Аквариумные рыбки</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
   <script src="./js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">FishHunter</a>
@@ -26,7 +28,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <h1 class="hero__title">FishHunter</h1>
       <p>Рыбки для вашего аквариума: яркие неоны, золотые рыбки и гуппи.</p>
@@ -37,17 +39,17 @@
       <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
         <article class="product-card product-card--featured" id="product-1">
-          <span class="product-card__badge">Хит</span><img class="product-card__image" src="images/neon-tetra.jpg" width="4214" height="2194" alt="Неон-тетра с яркой голубой и красной полосами" loading="lazy" decoding="async"><h3 class="product-card__title">Неоны</h3><p>Яркие стайные рыбки с голубой и красной полосами.</p><p class="product-card__price">Цена: 1000 руб.</p>
+          <span class="product-card__badge">Хит</span><img class="product-card__image" src="images/responsive/neon-tetra-960.jpg" srcset="images/responsive/neon-tetra-480.jpg 480w, images/responsive/neon-tetra-960.jpg 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="4214" height="2194" alt="Неон-тетра с яркой голубой и красной полосами" loading="lazy" decoding="async"><h3 class="product-card__title">Неоны</h3><p>Яркие стайные рыбки с голубой и красной полосами.</p><p class="product-card__price">Цена: 1000 руб.</p>
           <a class="product-card__details" href="product.html#product-1">Подробнее</a>
           <button class="button product-card__button" type="button" data-product="Неоны">Заказать</button>
         </article>
         <article class="product-card" id="product-2">
-          <img class="product-card__image" src="images/goldfish.jpg" width="960" height="640" alt="Золотая рыбка в аквариуме" loading="lazy" decoding="async"><h3 class="product-card__title">Золотая рыбка</h3><p>Классическая золотая рыбка для просторного аквариума.</p><p class="product-card__price">Цена: 1500 руб.</p>
+          <img class="product-card__image" src="images/goldfish.jpg" srcset="images/responsive/goldfish-480.jpg 480w, images/goldfish.jpg 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="960" height="640" alt="Золотая рыбка в аквариуме" loading="lazy" decoding="async"><h3 class="product-card__title">Золотая рыбка</h3><p>Классическая золотая рыбка для просторного аквариума.</p><p class="product-card__price">Цена: 1500 руб.</p>
           <a class="product-card__details" href="product.html#product-2">Подробнее</a>
           <button class="button product-card__button" type="button" data-product="Золотая рыбка">Заказать</button>
         </article>
         <article class="product-card" id="product-3">
-          <img class="product-card__image" src="images/guppy.jpg" width="2816" height="1880" alt="Ярко окрашенный самец гуппи с пёстрым хвостом" loading="lazy" decoding="async"><h3 class="product-card__title">Гуппи</h3><p>Небольшие живородящие рыбки с яркой окраской.</p><p class="product-card__price">Цена: 2000 руб.</p>
+          <img class="product-card__image" src="images/responsive/guppy-960.jpg" srcset="images/responsive/guppy-480.jpg 480w, images/responsive/guppy-960.jpg 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="2816" height="1880" alt="Ярко окрашенный самец гуппи с пёстрым хвостом" loading="lazy" decoding="async"><h3 class="product-card__title">Гуппи</h3><p>Небольшие живородящие рыбки с яркой окраской.</p><p class="product-card__price">Цена: 2000 руб.</p>
           <a class="product-card__details" href="product.html#product-3">Подробнее</a>
           <button class="button product-card__button" type="button" data-product="Гуппи">Заказать</button>
         </article>
