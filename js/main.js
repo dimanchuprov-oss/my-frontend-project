@@ -8,6 +8,41 @@ const formError = document.querySelector('#form-error');
 const feedbackForm = document.querySelector('#feedback-form');
 const feedbackSuccess = document.querySelector('#feedback-success');
 const feedbackError = document.querySelector('#feedback-error');
+const navigationToggle = document.querySelector('#site-nav-toggle');
+const navigationList = document.querySelector('#site-nav-list');
+
+if (navigationToggle && navigationList) {
+  const mobileNavigation = window.matchMedia('(max-width: 900px)');
+  const navigationLabel = navigationToggle.querySelector('.site-nav__label');
+
+  function setNavigationExpanded(expanded) {
+    navigationList.hidden = !expanded;
+    navigationToggle.setAttribute('aria-expanded', String(expanded));
+    navigationLabel.textContent = expanded ? 'Закрыть меню' : 'Меню';
+  }
+
+  setNavigationExpanded(!mobileNavigation.matches);
+  navigationToggle.addEventListener('click', () => {
+    setNavigationExpanded(navigationList.hidden);
+  });
+  navigationList.addEventListener('click', (event) => {
+    if (mobileNavigation.matches && event.target.closest('a')) {
+      setNavigationExpanded(false);
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileNavigation.matches && !navigationList.hidden) {
+      setNavigationExpanded(false);
+      navigationToggle.focus();
+    }
+  });
+  mobileNavigation.addEventListener('change', (event) => {
+    setNavigationExpanded(!event.matches);
+  });
+  window.addEventListener('resize', () => {
+    setNavigationExpanded(!mobileNavigation.matches);
+  });
+}
 
 function resetMessages() {
   if (successMessage) successMessage.hidden = true;

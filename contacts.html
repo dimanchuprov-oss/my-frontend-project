@@ -15,7 +15,10 @@
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">FishHunter</a>
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <button class="site-nav__toggle" id="site-nav-toggle" type="button" aria-controls="site-nav-list" aria-expanded="true">
+          <span class="site-nav__label">Меню</span><span class="site-nav__icon" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары подробнее</a></li>
