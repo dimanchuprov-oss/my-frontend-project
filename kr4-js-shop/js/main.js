@@ -4,6 +4,30 @@ const dialogProduct = document.querySelector('#selected-product');
 const productLabel = document.querySelector('#selected-product-label');
 const navigationToggle = document.querySelector('#site-nav-toggle');
 const navigationList = document.querySelector('#site-nav-list');
+const cartCount = document.querySelector('#cart-count');
+
+function updateCartBadge(items) {
+  if (!cartCount) return;
+  const count = getCartItemCount(items);
+  cartCount.textContent = String(count);
+  cartCount.setAttribute('aria-label', `Товаров в корзине: ${count}`);
+}
+
+function refreshCartBadge() {
+  const result = readCart();
+  updateCartBadge(result.items);
+  if (result.error) {
+    const status = document.querySelector('#catalog-storage-status, #cart-storage-status');
+    if (status) {
+      status.textContent = 'Не удалось прочитать сохранённую корзину. Проверьте данные в хранилище браузера.';
+    }
+  }
+}
+
+refreshCartBadge();
+window.addEventListener('storage', (event) => {
+  if (event.key === cartStorageKey) refreshCartBadge();
+});
 
 if (navigationToggle && navigationList) {
   const mobileNavigation = window.matchMedia('(max-width: 900px)');

@@ -104,9 +104,19 @@ function createProductCard(product) {
 
   const price = document.createElement('p');
   price.classList.add('product-card__price');
-  price.textContent = product.discountPercent
-    ? `${formatPrice(product.price)} · скидка ${product.discountPercent}%`
-    : formatPrice(product.price);
+  if (product.discountPercent > 0) {
+    const oldPrice = document.createElement('del');
+    oldPrice.textContent = formatPrice(product.price);
+    const currentPrice = document.createElement('strong');
+    currentPrice.classList.add('product-card__price-current');
+    currentPrice.textContent = formatPrice(getDiscountedPrice(product));
+    const discount = document.createElement('span');
+    discount.classList.add('product-card__discount');
+    discount.textContent = `Скидка ${product.discountPercent}%`;
+    price.append(oldPrice, currentPrice, discount);
+  } else {
+    price.textContent = formatPrice(product.price);
+  }
 
   const details = document.createElement('p');
   details.classList.add('product-card__meta');
@@ -129,6 +139,14 @@ function createProductCard(product) {
   actions.append(favoriteButton);
 
   if (product.isAvailable) {
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('button', 'product-card__button');
+    addToCartButton.type = 'button';
+    addToCartButton.dataset.cartAction = 'add';
+    addToCartButton.dataset.productId = String(product.id);
+    addToCartButton.textContent = 'В корзину';
+    actions.append(addToCartButton);
+
     const orderLink = document.createElement('a');
     orderLink.classList.add('button', 'product-card__button');
     orderLink.href = `order.html?product=${encodeURIComponent(product.id)}`;
@@ -203,6 +221,31 @@ if (productsContainer && catalogControls) {
     window.setTimeout(updateCatalog);
   });
   productsContainer.addEventListener('click', (event) => {
+    const cartButton = event.target.closest('[data-cart-action="add"]');
+    if (cartButton) {
+      const productId = Number(cartButton.dataset.productId);
+      const product = products.find((candidate) => candidate.id === productId);
+      const cartResult = readCart();
+      if (cartResult.error) {
+        storageStatus.textContent = 'Не удалось прочитать корзину. Добавление отменено, чтобы не потерять сохранённые данные.';
+        return;
+      }
+      const cartItem = cartResult.items.find((item) => item.productId === productId);
+      const nextCart = cartItem
+        ? cartResult.items.map((item) => (
+          item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item
+        ))
+        : [...cartResult.items, { productId, quantity: 1 }];
+      const saveResult = writeCart(nextCart);
+      if (saveResult.error) {
+        storageStatus.textContent = 'Не удалось сохранить корзину. Проверьте настройки хранения браузера.';
+        return;
+      }
+      storageStatus.textContent = `${product.title} добавлен в корзину.`;
+      updateCartBadge(nextCart);
+      return;
+    }
+
     const button = event.target.closest('[data-action="toggle-favorite"]');
     if (!button) return;
     const productId = Number(button.dataset.productId);

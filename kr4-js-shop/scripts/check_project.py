@@ -12,7 +12,7 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         self.nodes.append((tag, dict(attrs)))
 pages = {p.name: Page(p.read_text()) for p in ROOT.glob('*.html')}
-assert set(pages) == {'index.html', 'catalog.html', 'contacts.html', 'product.html', 'order.html'}
+assert set(pages) == {'index.html', 'catalog.html', 'contacts.html', 'product.html', 'order.html', 'cart.html'}
 titles, descriptions = [], []
 for name, page in pages.items():
     source = (ROOT / name).read_text()
@@ -96,6 +96,15 @@ assert 'sortProducts' in catalog_script and 'filterProductsByCategory' in catalo
 assert 'const sortedItems = [...items]' in catalog_script, 'Сортировка не должна менять исходный массив'
 assert 'new Map(products.map' in catalog_script, 'Категории должны формироваться по данным товаров'
 assert 'localStorage' in catalog_script
+assert 'data-cart-action' in catalog_script
+cart_storage_script = (ROOT / 'js/cart-storage.js').read_text(encoding='utf-8')
+cart_script = (ROOT / 'js/cart.js').read_text(encoding='utf-8')
+assert 'localStorage.getItem(cartStorageKey)' in cart_storage_script
+assert 'localStorage.setItem(cartStorageKey' in cart_storage_script
+assert 'function getDiscountedPrice(product)' in cart_storage_script
+assert 'reduce(' in cart_storage_script
+assert 'getDiscountedPrice' in cart_script
+assert 'Math.round(product.price * (100 - product.discountPercent) / 100)' in cart_storage_script
 validation_script = (ROOT / 'js/validation.js').read_text(encoding='utf-8')
 assert 'checkValidity()' in validation_script and 'reportValidity()' in validation_script
 assert 'textContent' in validation_script

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Корзина FishHunter: управление количеством товаров и расчёт суммы со скидками.">
+  <title>Корзина — FishHunter</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script src="./js/data.js" defer></script>
+  <script src="./js/cart-storage.js" defer></script>
+  <script src="./js/cart.js" defer></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">FishHunter</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button class="site-nav__toggle" id="site-nav-toggle" type="button" aria-controls="site-nav-list" aria-expanded="true">
+          <span class="site-nav__label">Меню</span><span class="site-nav__icon" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="cart.html" aria-current="page">Корзина <span class="cart-count" id="cart-count" aria-label="0 товаров в корзине">0</span></a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Корзина</span>
+    </nav>
+    <section class="section cart-page">
+      <h1 class="section__title">Корзина</h1>
+      <p>Состав корзины сохраняется в этом браузере. Цены и скидки демонстрационные.</p>
+      <p class="catalog-storage-status" id="cart-storage-status" role="status" aria-live="polite"></p>
+      <div class="cart-items" id="cart-items"></div>
+      <p class="catalog-empty" id="cart-empty" role="status">Корзина пока пуста. Загляните в каталог.</p>
+      <p class="cart-summary" id="cart-summary" aria-live="polite" hidden></p>
+      <div class="cart-page__actions">
+        <a class="button button--secondary" href="catalog.html">Продолжить покупки</a>
+        <button class="button button--secondary" id="clear-cart" type="button">Очистить корзину</button>
+      </div>
+      <p class="cart-disclaimer">Это учебная корзина: заказ и оплата не отправляются.</p>
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
+    <p>Выберите товар в каталоге и перейдите к оформлению заявки.</p>
+    <a href="contacts.html">Контактная информация</a>
+    <p>&copy; 2026 FishHunter. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+  <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">Наверх ↑</a>
+</body>
+</html>
