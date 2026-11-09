@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контактная информация учебного интернет-магазина и переход к форме заявки.">
+  <title>Контакты — FishHunter</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script src="./js/data.js" defer></script>
+  <script src="./js/validation.js" defer></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">FishHunter</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button class="site-nav__toggle" id="site-nav-toggle" type="button" aria-controls="site-nav-list" aria-expanded="true">
+          <span class="site-nav__label">Меню</span><span class="site-nav__icon" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Контакты</span>
+    </nav>
+    <section class="section">
+      <h1 class="hero__title">Контакты</h1>
+      <p>Демонстрационные контактные данные учебного магазина.</p>
+      <address>
+        <ul class="contact-list">
+          <li>Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+          <li>E-mail: <a href="mailto:info@example.com">info@example.com</a></li>
+          <li>Адрес: г. Москва, учебный проект</li>
+        </ul>
+      </address>
+    </section>
+    <section class="section" id="feedback">
+      <h2 class="section__title">Обратная связь</h2>
+      <p>Заполните форму, чтобы оставить вопрос. Данные проверяются в браузере и не отправляются на сервер.</p>
+      <form class="order-form order-form--page" id="feedback-form" action="#" method="post" novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-name">Имя</label>
+          <input class="order-form__input" id="feedback-name" name="name" type="text" autocomplete="name" minlength="2" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-email">E-mail</label>
+          <input class="order-form__input" id="feedback-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-message">Сообщение</label>
+          <textarea class="order-form__textarea" id="feedback-message" name="message" rows="4" minlength="5" required></textarea>
+        </div>
+        <p class="order-form__error" id="feedback-error" role="alert" hidden></p>
+        <div class="order-form__actions">
+          <button class="button order-form__button" type="submit">Отправить сообщение</button>
+          <button class="button button--secondary order-form__button" type="reset">Очистить</button>
+        </div>
+        <p class="order-form__success" id="feedback-success" role="status" hidden>Сообщение проверено. Это учебная форма: данные не отправляются на сервер.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
+    <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
+    <a href="contacts.html">Контактная информация</a><p>&copy; 2026 FishHunter. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+  <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">Наверх ↑</a>
+</body>
+</html>

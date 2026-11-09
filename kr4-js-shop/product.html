@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Изображения, описания, цены и таблицы характеристик трёх учебных товаров.">
+  <title>Описание рыб — FishHunter</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script src="./js/data.js" defer></script>
+  <script src="./js/validation.js" defer></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">FishHunter</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button class="site-nav__toggle" id="site-nav-toggle" type="button" aria-controls="site-nav-list" aria-expanded="true">
+          <span class="site-nav__label">Меню</span><span class="site-nav__icon" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товары подробнее</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span class="breadcrumbs__current" aria-current="page">Описание товаров</span></nav>
+    <section class="section">
+      <h1 class="section__title">Описание товаров</h1>
+      <article class="product-details" id="product-1">
+        <h2 class="product-details__title">Неоны</h2>
+        <img class="product-details__image" src="images/responsive/neon-tetra-960.jpg" srcset="images/responsive/neon-tetra-480.jpg 480w, images/responsive/neon-tetra-960.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="4214" height="2194" alt="Неон-тетра с яркой голубой и красной полосами" decoding="async">
+        <p class="product-details__description">Яркая стайная аквариумная рыбка с характерной голубой и красной полосами.</p>
+        <p class="product-card__price">Цена: 1000 руб.</p>
+        <div class="table-wrapper" role="region" aria-label="Характеристики неонов" tabindex="0"><table class="spec-table">
+            <caption class="spec-table__caption">Характеристики: неоны</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">FISH-001</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные стайные рыбки</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Неон-тетра</td></tr>
+          </tbody>
+        </table></div>
+        <a class="button" href="order.html?product=1">Заказать неонов</a>
+      </article>
+      <article class="product-details" id="product-2">
+        <h2 class="product-details__title">Золотая рыбка</h2>
+        <img class="product-details__image" src="images/goldfish.jpg" srcset="images/responsive/goldfish-480.jpg 480w, images/goldfish.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="960" height="640" alt="Золотая рыбка в аквариуме" decoding="async">
+        <p class="product-details__description">Золотая рыбка, популярный представитель семейства карповых.</p>
+        <p class="product-card__price">Цена: 1500 руб.</p>
+        <div class="table-wrapper" role="region" aria-label="Характеристики золотой рыбки" tabindex="0"><table class="spec-table">
+            <caption class="spec-table__caption">Характеристики: золотая рыбка</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">FISH-002</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные рыбки</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Золотая рыбка</td></tr>
+          </tbody>
+        </table></div>
+        <a class="button" href="order.html?product=2">Заказать золотую рыбку</a>
+      </article>
+      <article class="product-details" id="product-3">
+        <h2 class="product-details__title">Гуппи</h2>
+        <img class="product-details__image" src="images/responsive/guppy-960.jpg" srcset="images/responsive/guppy-480.jpg 480w, images/responsive/guppy-960.jpg 960w" sizes="(max-width: 479px) calc(100vw - 72px), 480px" width="2816" height="1880" alt="Ярко окрашенный самец гуппи с пёстрым хвостом" decoding="async">
+        <p class="product-details__description">Небольшая живородящая рыбка, известная разнообразием окраски и формы хвоста.</p>
+        <p class="product-card__price">Цена: 2000 руб.</p>
+        <div class="table-wrapper" role="region" aria-label="Характеристики гуппи" tabindex="0"><table class="spec-table">
+            <caption class="spec-table__caption">Характеристики: гуппи</caption>
+          <thead><tr><th class="spec-table__cell spec-table__cell--heading" scope="col">Характеристика</th><th class="spec-table__cell spec-table__cell--heading" scope="col">Значение</th></tr></thead>
+          <tbody>
+            <tr><th class="spec-table__cell" scope="row">Артикул</th><td class="spec-table__cell">FISH-003</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Категория</th><td class="spec-table__cell">Пресноводные живородящие рыбки</td></tr>
+            <tr><th class="spec-table__cell" scope="row">Вид</th><td class="spec-table__cell">Гуппи</td></tr>
+          </tbody>
+        </table></div>
+        <a class="button" href="order.html?product=3">Заказать гуппи</a>
+      </article>
+
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <h2 class="section__title">Обратная связь</h2>
+    <p>Выберите товар в <a href="index.html#popular">популярных товарах</a> и нажмите «Заказать», чтобы открыть форму заявки.</p>
+    <a href="contacts.html">Контактная информация</a><p>&copy; 2026 FishHunter. Все права защищены.</p><p>Дисциплина: Фронтенд и бэкенд разработка</p></footer>
+  <a class="back-to-top" href="#top">Наверх ↑</a>
+</body>
+</html>
